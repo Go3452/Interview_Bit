@@ -1,0 +1,17 @@
+public class Solution {
+    public String findDigitsInBinary(int A) {
+        String s="";
+        if(A==0)
+        {
+         s="0";
+         return s;
+        }
+        while(A>0)
+        {
+         int r=A%2;
+         s=Integer.toString(r)+s;
+         A/=2;
+        }
+        return s;
+    }
+}
