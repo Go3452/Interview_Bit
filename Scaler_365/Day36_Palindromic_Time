@@ -1,0 +1,26 @@
+public class Solution {
+    public int solve(String A) {
+        int a=Integer.parseInt(A.substring(0,2));
+        int b=Integer.parseInt(A.substring(3,5));
+        int x=a/10;
+        int y=a%10;
+        int z=b/10;
+        int w=b%10;
+        int count=0;
+        while(x!=w||y!=z)
+        {
+         count++;
+         int carry=0;
+         b++;
+         carry=b/60;
+         b=b%60;
+         a+=carry;
+         a=a%24;
+         x=a/10;
+         y=a%10;
+         z=b/10;
+         w=b%10;
+        }
+        return count;
+    }
+}
