@@ -1,0 +1,29 @@
+public class Solution {
+    public String solve(String A, int B) {
+        int count=1,ind=0;
+        char ch=A.charAt(0);
+        A=A+'$';
+        String ans="";
+        for(int i=1;i<A.length();i++)
+        {
+         if(ch==A.charAt(i))
+          count++;
+         else
+         {
+          if(count==B)
+          {
+           ch=A.charAt(i);
+          ind=i;
+          count=1;   
+          }
+          else{
+          ans+=A.substring(ind,i);
+          ch=A.charAt(i);
+          ind=i;
+          count=1;
+          }
+         }
+        }
+        return ans;
+    }
+}
