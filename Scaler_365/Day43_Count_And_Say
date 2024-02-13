@@ -1,0 +1,30 @@
+public class Solution {
+    public String countAndSay(int A) {
+        String s="1",ans="";
+        int count=0;
+        for(int i=2;i<=A;i++)
+        {
+         char ch=s.charAt(0);
+         ans="";
+         count=0;
+         for(int j=0;j<s.length();j++)
+         {
+          if(s.charAt(j)==ch)
+           count++;
+          else
+          {
+           ans+=Integer.toString(count);
+           ans+=ch;
+           ch=s.charAt(j);
+           count=1;
+          }
+         }
+         ans+=Integer.toString(count);
+           ans+=ch;
+         s=ans;
+        }
+        if(A==1)
+         return "1";
+        return ans;
+    }
+}
