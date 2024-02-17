@@ -1,0 +1,33 @@
+public class Solution {
+	public long reverse(long a) {
+		long an=0;
+		if(a==0)
+		 return 0;
+		int count=0;
+		long b=a,d=1;
+		String ans="";
+		while(b>0)
+		{
+		 count++;
+		 long c=b%2;
+		 if(c==1)
+		  ans="1"+ans;
+		 else
+		  ans="0"+ans;
+		 b/=2;
+		}
+		for(int i=0;i<32-count;i++)
+		 ans="0"+ans;
+		for(int i=0;i<32;i++)
+		{
+		 if(i!=0)
+		  d*=2;
+		  long e=d;
+		 if(ans.charAt(i)=='0')
+		  an=an+e*0;
+		 else
+		  an=an+e*1;
+		}
+		return an;
+	}
+}
