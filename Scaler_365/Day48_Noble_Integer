@@ -1,0 +1,22 @@
+public class Solution {
+    public int solve(int[] A) {
+        Arrays.sort(A);
+        int ans=-1,n=A.length;
+        int num=A[0];
+        for(int i=1;i<n;i++)
+        {
+         if(num==A[i]);
+         else
+         {
+          if(num==n-i)
+          {
+           ans=1;break;
+          }
+          num=A[i];
+         }
+        }
+        if(A[n-1]==0)
+         ans=1;
+        return ans;
+    }
+}
