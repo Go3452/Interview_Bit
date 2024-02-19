@@ -1,0 +1,15 @@
+public class Solution {
+    public long solve(int A, int B) {
+        long x1=0;
+        long d=A;
+        for(int i=0;i<B-1;i++)
+        {
+         if(d%2==0)
+          x1=d/2;
+         else
+          x1=3*d+1;
+         d=x1;
+        }
+        return x1;
+    }
+}
