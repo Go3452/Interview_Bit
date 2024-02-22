@@ -1,0 +1,17 @@
+public class Solution {
+	public int removeDuplicates(ArrayList<Integer> a) {
+		int i=1,j=1,num=a.get(0);
+		for(;j<a.size();)
+		{
+		 if(num==a.get(j))
+		  j++;
+		 else
+		 {
+		  a.set(i,a.get(j));
+		  i++;
+		  num=a.get(j);
+		 }
+		}
+		return i;
+	}
+}
