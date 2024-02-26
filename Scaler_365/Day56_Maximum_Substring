@@ -1,0 +1,22 @@
+public class Solution {
+    public int solve(String A, int B) {
+        int count=0,acount=0,max=0;
+        for(int i=0;i<A.length();i++)
+        {
+         char ch =A.charAt(i);
+         if(ch=='a')
+          acount++;
+         count++;
+         if(count==B)
+         {
+          count=0;
+          if(acount>max)
+           max=acount;
+          acount=0;
+         }
+        }
+        if(acount>max)
+         max=acount;
+        return max;
+    }
+}
