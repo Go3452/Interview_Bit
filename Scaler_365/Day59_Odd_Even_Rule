@@ -1,0 +1,22 @@
+public class Solution {
+    public int solve(int[] A, int B, int C) {
+        int sum=0;
+        if(B%2==0)
+        {
+         for(int i=0;i<A.length;i++)
+         {
+          if(A[i]%2==1)
+           sum+=C;
+         }
+        }
+        else
+        {
+         for(int i=0;i<A.length;i++)
+         {
+          if(A[i]%2==0)
+           sum+=C;
+         }
+        }
+        return sum;
+    }
+}
