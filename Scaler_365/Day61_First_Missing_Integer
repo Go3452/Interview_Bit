@@ -1,0 +1,12 @@
+public class Solution {
+    public int firstMissingPositive(int[] A) {
+        Arrays.sort(A);
+        int ans=1;
+        for(int i=0;i<A.length;i++)
+        {
+         if(ans==A[i])
+          ans++;
+        }
+        return ans;
+    }
+}
