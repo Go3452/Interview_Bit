@@ -1,0 +1,20 @@
+public class Solution {
+    public int solve(int[] A) {
+        Arrays.sort(A);
+        int ans=0;
+        int freq=1,num=A[0];
+        for(int i=1;i<A.length;i++)
+        {
+         if(num==A[i])
+          freq++;
+         else 
+         {
+          ans+=freq/2;
+          freq=1;
+          num=A[i];
+         }
+        }
+        ans+=freq/2;
+        return ans;
+    }
+}
