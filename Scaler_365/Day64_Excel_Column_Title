@@ -1,0 +1,13 @@
+public class Solution {
+    public String convertToTitle(int A) {
+        String S="";
+        while(A>0)
+        {
+         int a=(A-1)%26;
+         char ch=(char)('A'+a);
+         S=ch+S;
+         A=(A-1)/26;
+        }
+        return S;
+    }
+}
