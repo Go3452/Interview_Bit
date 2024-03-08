@@ -1,0 +1,62 @@
+public class Solution {
+    public int solve(int A, int B, int C) {
+        int c=0,c1=0,a=0,b=0,n=A,m=0;
+        while(n>0)
+        {
+         c++;
+         if(c==B)
+          a=n%2;
+         if(c==C)
+          b=n%2;
+         n/=2;
+        }
+        int base=1;
+        int max=B>C?B:C;
+        if(a==b)
+         return A;
+        else if(c>=max)
+        {
+         while(A>0)
+         {
+          c1++;
+          
+          if(c1==B)
+           m+=b*base;
+          else if(c1==C)
+           m+=a*base;
+          else
+           m+=(A%2)*base;
+          base*=2;
+          A/=2;
+         }
+        }
+        else
+        {
+         for(int i=1;i<=max;i++)
+         {
+          if(A>0)
+          {
+           c1++;
+           if(c1==B) 
+            m+=b*base;
+           else if(c1==C)
+            m+=a*base;
+           else
+            m+=(A%2)*base;
+           base*=2;
+           A/=2;
+          }
+          else
+          {
+           c1++;
+           if(c1==B)
+            m+=b*base;
+           else if(c1==C)
+           m+=a*base;
+           base*=2;
+          }
+         }
+        }
+     return m;
+    }
+}
