@@ -1,0 +1,18 @@
+public class Solution {
+	public int pow(int x, int n, int d) {
+        long result=1;
+        long a=x;
+        while(n>0)
+        {
+         if(n%2==1)
+         {
+          result*=a;
+          result=result%d;
+         }
+         a=a*a;
+         a=a%d;
+         n=n>>1;
+        }
+        return (int)(result+d)%d;
+	}
+}
