@@ -1,9 +1,0 @@
-public class Solution {
-    public long solve(int A, int B) {
-       long a=(A%7==0)?A:A+(7-A%7);
-       long b=(B%7==0)?B:B-(B%7);
-       long n=(b-a)/7+1;
-       long ans=n*(2*a+(n-1)*7)/2;
-       return ans;
-    }
-}
