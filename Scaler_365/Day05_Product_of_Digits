@@ -1,0 +1,15 @@
+public class Solution {
+    public int solve(int A) {
+        int ans=1;
+        int n=A;
+        while(A>0)
+        {
+         int r=A%10;
+         ans *= r;
+         A=A/10;
+        }
+        if(n==0)
+         return 0;
+        return ans;
+    }
+}
