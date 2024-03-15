@@ -1,0 +1,26 @@
+public class Solution {
+    public String reverse(String s){
+        StringBuilder sb = new StringBuilder( s);
+        int i=0;
+        int j=sb.length()-1;
+        while(i<j){
+            char ch = sb.charAt(i);
+            char ch1 = sb.charAt(j);
+            sb.setCharAt(i,ch1);
+            sb.setCharAt(j,ch);
+            i++;
+            j--;
+        }
+        return sb.toString();
+    }
+    public String solve(String A) {
+        String x="";
+        String words[] = A.split(" ");
+        for(int i=0;i<words.length;i++){
+            x+=reverse(words[i])+" ";
+        }
+        String ans = reverse(x);
+        ans=ans.replaceAll("\\s+"," ").trim();
+        return ans;
+    }
+}
