@@ -1,0 +1,20 @@
+public class Solution {
+    public int solve(int[] A) {
+        int count=1;
+        int flag;
+        for(int i=1;i<A.length;i++)
+        {
+         flag=0;
+         for(int j=0;j<i;j++)
+         {
+          if(A[j]>=A[i])
+          {
+           flag=1;break;
+          }
+         }
+         if(flag==0)
+           count++;
+        }
+        return count;
+    }
+}
