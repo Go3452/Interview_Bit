@@ -1,0 +1,30 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int majorityElement(final int[] A) {
+        Arrays.sort(A);
+        int n=A.length/2;
+        int c=1;
+        int num=A[0];
+        int ans=A[0];
+        for(int i=1;i<A.length;i++)
+        {
+         if(num==A[i])
+          c++;
+         else
+         {
+          if(c>n)
+           {ans=A[i-1];
+          c=0;
+          return ans;}
+          else
+           {c=1;num=A[i];}
+         }
+         if(c>n)
+          {
+           ans=A[i];
+           break;
+          }
+        }
+        return ans;
+    }
+}
