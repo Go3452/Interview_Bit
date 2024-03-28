@@ -1,0 +1,19 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int minimize(final int[] A, final int[] B, final int[] C) {
+        int a=A.length,b=B.length,c=C.length;
+        int ans=Integer.MAX_VALUE;
+        int i=a-1,j=b-1,k=c-1;
+        while(i>=0&&j>=0&&k>=0)
+        {
+         int max=Math.max(A[i],Math.max(B[j],C[k]));
+         int min=Math.min(A[i],Math.min(B[j],C[k]));
+         if(A[i]==max) i--;
+         else if(B[j]==max) j--;
+         else k--;
+         
+         ans=Math.min(ans,max-min);
+        }
+        return ans;
+    }
+}
