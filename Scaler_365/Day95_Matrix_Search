@@ -1,0 +1,17 @@
+public class Solution {
+    public int searchMatrix(int[][] A, int B) {
+        int n=A.length,m=A[0].length;
+        for(int i=0;i<n;i++)
+        {
+         if(A[i][m-1]<B)
+          continue;
+         for(int j=0;j<m;j++)
+         {
+          if(A[i][j]==B)
+           return 1;
+         }
+         break;
+        }
+        return 0;
+    }
+}
