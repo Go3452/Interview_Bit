@@ -1,1 +1,16 @@
-
+ public class Solution {
+    public int solve(int[] A) {
+        int count1=0,count2=0;
+        for(int i=0;i<A.length;i++)
+        {
+         if(A[i]%2==0)
+          count2++;
+         else
+          count1++;
+        }
+        if(count1<count2)
+         return count1;
+        else
+         return count2;
+    }
+}
