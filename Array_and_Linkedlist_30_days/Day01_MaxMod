@@ -1,0 +1,23 @@
+public class Solution {
+    public int solve(int[] A) {
+        int max=0;
+        int diff=0;
+        int n=A.length;
+        for(int i=0;i<n;i++)
+        {
+         for(int j=i+1;j<n;j++)
+         {
+          if(A[i]==0||A[j]==0)
+           continue;
+          diff=A[i]%A[j];
+          if(diff>max)
+           max=diff;
+          diff=A[j]%A[i];
+          if(max<diff) 
+           max=diff;
+         }
+        }
+        return max;
+    }
+}
+ 
