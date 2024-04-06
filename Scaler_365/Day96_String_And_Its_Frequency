@@ -1,0 +1,26 @@
+public class Solution {
+    public String solve(String A) {
+        int []freq = new int[26];
+        for(int i=0;i<A.length();i++)
+         freq[A.charAt(i)-'a']++;
+        int count=0;
+        for(int i=0;i<26;i++)
+        {
+         if(freq[i]!=0)
+          count++;
+        }
+        int []mark = new int[26];
+        String ans="";
+        for(int i=0;i<A.length();i++)
+        {
+         int num=A.charAt(i)-'a';
+         if(mark[num]==0)
+         {
+          ans+=A.charAt(i);
+          ans+=String.valueOf(freq[num]);
+          mark[num]=1;
+         }
+        }
+        return ans;
+    }
+}
