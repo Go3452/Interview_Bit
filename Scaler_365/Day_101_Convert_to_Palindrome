@@ -1,0 +1,30 @@
+public class Solution {
+    public int solve(String A) {
+        int i=0;
+        int j=A.length()-1;
+        while(i<=j)
+        {
+         if(A.charAt(i)!=A.charAt(j))
+         {
+          boolean ispossible = ispalindrome(A.substring(i,j)) || ispalindrome(A.substring(i+1,j+1));
+          if(ispossible) return 1;
+          else return 0;
+         }
+         i++;j--;
+        }
+        return 1;
+    }
+    public boolean ispalindrome(String str)
+    {
+     int i=0;
+     int j=str.length()-1;
+     while(i<=j)
+     {
+      if(str.charAt(i)!=str.charAt(j))
+       return false;
+      i++;
+      j--;
+     }
+     return true;
+    }
+}
