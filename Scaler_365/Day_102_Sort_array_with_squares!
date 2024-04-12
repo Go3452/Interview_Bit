@@ -1,0 +1,23 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        int i=0,j=A.length-1;
+        int ans[] = new int[A.length];
+        int k=j;
+        while(i<=j)
+        {
+         int a=A[i]<0?(-A[i]):A[i];
+         int b=A[j]<0?(-A[j]):A[j];
+         if(a>=b)
+         {
+          ans[k]=a*a;
+          k--;i++;
+         }
+         else
+         {
+          ans[k]=b*b;
+          k--;j--;
+         }
+        }
+        return ans;
+    }
+}
