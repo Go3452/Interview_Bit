@@ -1,0 +1,11 @@
+public class Solution {
+    public int solve(int A) {
+        int count=0;
+        while(count<A)
+        {
+         count++;
+         A-=count;
+        }
+        return count;
+    }
+}
