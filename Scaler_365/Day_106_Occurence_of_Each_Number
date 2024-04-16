@@ -1,0 +1,28 @@
+public class Solution {
+    public int[] findOccurences(int[] A) {
+     int n=A.length,count=0;
+     int []fre = new int[n];
+     Arrays.sort(A);
+     int num=A[0],freq=1,k=0;
+     for(int i=1;i<n;i++)
+     {
+      if(num==A[i])
+       freq++;
+      else
+      {
+       fre[k]=freq;
+       k++;
+       num=A[i];
+       freq=1;
+      }
+     }
+     fre[k]=freq;
+     k++;
+     if(k==n)
+      return fre;
+     int []ans = new int[k];
+     for(int i=0;i<k;i++)
+      ans[i]=fre[i];
+     return ans;
+    }
+}
