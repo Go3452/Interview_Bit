@@ -1,0 +1,12 @@
+public class Solution {
+    public int solve(int A) {
+        int count=0,mod=1000000007;
+      for(int i=1;i<=A;i++)
+      {
+       count+=Integer.bitCount(i);
+       if(count>mod)
+        count-=mod;
+      }
+      return count;
+    }
+}
