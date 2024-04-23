@@ -1,0 +1,21 @@
+public class Solution {
+	// DO NOT MODIFY THE LIST
+	public int repeatedNumber(final List<Integer> a) {
+        Collections.sort(a);
+        int freq=1,num=a.get(0),n=a.size();
+        int m=n/3;
+        for(int i=1;i<n;i++)
+        {
+         if(num==a.get(i))
+          freq++;
+         else
+         {
+          if(freq>m) return num;
+          freq=1;
+          num=a.get(i);
+         }
+        }
+        if(freq>m) return num;
+        return -1;
+	}
+}
