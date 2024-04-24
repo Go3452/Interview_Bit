@@ -1,0 +1,13 @@
+public class Solution {
+	public void arrange(ArrayList<Integer> a) {
+        int n = a.size();
+        int []ans = new int[n];
+        for(int i=0;i<n;i++)
+        {
+         int num=a.get(i);
+         ans[i]=a.get(num);
+        }
+        for(int i=0;i<n;i++)
+         a.set(i,ans[i]);
+	}
+}
