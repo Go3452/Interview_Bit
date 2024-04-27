@@ -1,0 +1,40 @@
+public class Solution {
+    public int[][] solve(int[] A, int B, int C) {
+        int [][]spiral = new int[B][C];
+        int toprow=0,bottomrow=B-1,leftcol=0,rightcol=C-1;
+        int n=A.length,count=0;
+        int k=0;
+        while(count<n)
+        {
+         for(int j=leftcol;j<=rightcol&&count<n;j++)
+         {
+          spiral[toprow][j]=A[k];
+          k++;
+          count++;
+         }
+         toprow++;
+         for(int i=toprow;i<=bottomrow&&count<n;i++)
+         {
+          spiral[i][rightcol]=A[k];
+          k++;
+          count++;
+         }
+         rightcol--;
+         for(int j=rightcol;j>=leftcol&&count<n;j--)
+         {
+          spiral[bottomrow][j]=A[k];
+          k++;
+          count++;
+         }
+         bottomrow--;
+         for(int i=bottomrow;i>=toprow&&count<n;i--)
+         {
+          spiral[i][leftcol]=A[k];
+          k++;
+          count++;
+         }
+         leftcol++;
+        }
+        return spiral;
+    }
+}
