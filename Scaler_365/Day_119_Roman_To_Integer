@@ -1,0 +1,110 @@
+public class Solution {
+    public int romanToInt(String A) {
+     int sum=0;
+     int n=A.length();
+     for(int i=0;i<n;)
+     {
+      char ch=A.charAt(i);
+      
+      if(ch=='M')
+      {
+       sum+=1000;
+       i++;
+      }
+      
+      if(ch=='D')
+      {
+       sum+=500;
+       i++;
+      }
+      
+      if(ch=='L')
+      {
+       sum+=50;
+       i++;
+      }
+      
+      if(ch=='V')
+      {
+       sum+=5;
+       i++;    
+      }
+      
+      if(ch=='I'&&i!=n-1)
+      {
+       char c=A.charAt(i+1);
+       if(c=='V')
+       {
+        sum+=4;
+        i+=2;
+       }
+       else if(c=='X')
+       {
+        sum+=9;
+        i+=2;
+       }
+       else
+       {
+        sum++;
+        i++;
+       }
+      }
+      else if(ch=='I')
+      {
+       sum++;
+       i++;
+      }
+      
+       if(ch=='X'&&i!=n-1)
+      {
+       char c=A.charAt(i+1);
+       if(c=='L')
+       {
+        sum+=40;
+        i+=2;
+       }
+       else if(c=='C')
+       {
+        sum+=90;
+        i+=2;
+       }
+       else
+       {
+        sum+=10;;
+        i++;
+       }
+      }
+      else if(ch=='X')
+      {
+       sum+=10;
+       i++;
+      }
+     
+      if(ch=='C'&&i!=n-1)
+      {
+       char c=A.charAt(i+1);
+       if(c=='D')
+       {
+        sum+=400;
+        i+=2;
+       }
+       else if(c=='M')
+       {
+        sum+=900;
+        i+=2;
+       }
+       else
+       {
+        sum+=100;
+        i++;
+       }
+      }
+      else if(ch=='C')
+      {
+       sum+=100;
+       i++;
+      }
+     }
+     return sum;
+    }
+}
