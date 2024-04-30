@@ -1,0 +1,65 @@
+public class Solution {
+    public String intToRoman(int A) {
+        String ans="";
+        int n=A;
+        int []arr = new int[13];
+        arr[0]=1000;arr[1]=900;arr[2]=500;arr[3]=400;arr[4]=100;arr[5]=90;
+        arr[6]=50;arr[7]=40;arr[8]=10;arr[9]=9;arr[10]=5;arr[11]=4;arr[12]=1;
+        while(n>0)
+        {
+         if(n>=arr[0])
+         {
+          ans+="M";n-=arr[0];
+         }
+         else if(n>=arr[1])
+         {
+          ans+="CM";n-=arr[1];
+         }
+         else if(n>=arr[2])
+         {
+          ans+="D";n-=arr[2];
+         }
+         else if(n>=arr[3])
+         {
+          ans+="CD";n-=arr[3];
+         }
+         else if(n>=arr[4])
+         {
+          ans+="C";n-=arr[4];
+         }
+         else if(n>=arr[5])
+         {
+          ans+="XC";n-=arr[5];
+         }
+         else if(n>=arr[6])
+         {
+          ans+="L";n-=arr[6];
+         }
+         else if(n>=arr[7])
+         {
+          ans+="XL";n-=arr[7];
+         }
+         else if(n>=arr[8])
+         {
+          ans+="X";n-=arr[8];
+         }
+         else if(n>=arr[9])
+         {
+          ans+="IX"; n-=arr[9];
+         }
+         else if(n>=arr[10])
+         {
+          ans+="V";n-=arr[10];
+         }
+         else if(n>=arr[11])
+         {
+          ans+="IV";n-=arr[11];
+         }
+         else if(n>=arr[12])
+         {
+          ans+="I";n-=arr[12];
+         }
+        }
+        return ans;
+    }
+}
