@@ -1,0 +1,43 @@
+public class Solution {
+    public int solve(int[] A, int B) {
+        int ind=-1;
+        int n=A.length;
+        int i=0,j=n-1;
+        while(i<=j)
+        {
+         int mid=(i+j)/2;
+         if(A[mid]>A[mid+1])
+         {
+          ind=mid;
+          break;
+         }
+         else if(A[mid]<A[mid+1])
+          i=mid+1;
+         else
+          j=mid-1;
+        }
+        int s=0,e=ind;
+        while(s<=e)
+        {
+         int mid=(s+e)/2;
+         if(A[mid]==B)
+          return mid;
+         else if(A[mid]<B)
+          s=mid+1;
+         else
+          e=mid-1;
+        }
+        s=ind+1;e=n-1;
+        while(s<=e)
+        {
+         int mid=(s+e)/2;
+         if(A[mid]==B)
+          return mid;
+         else if(A[mid]>B)
+          s=mid+1;
+         else
+          e=mid-1;
+        }
+        return -1;
+    }
+}
