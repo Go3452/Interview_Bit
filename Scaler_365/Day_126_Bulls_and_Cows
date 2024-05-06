@@ -1,0 +1,35 @@
+public class Solution {
+    public String solve(String A, String B) {
+        int freq[] = new int[10];
+        int n = A.length();
+        for(int i=0;i<n;i++)
+         freq[A.charAt(i)-'0']++;
+        int cows=0,bulls=0;
+        for(int i=0;i<n;i++)
+        {
+         if(A.charAt(i)==B.charAt(i))
+         {
+          cows++;
+          freq[A.charAt(i)-'0']--;
+         }
+        }
+        for(int i=0;i<n;i++)
+        {
+         if(A.charAt(i)!=B.charAt(i))
+         {
+           int num=B.charAt(i)-'0';
+          if(freq[num]!=0)
+          {
+           bulls++;
+           freq[num]--;
+          }
+         }
+        }
+        String ans="";
+        ans+=Integer.toString(cows);
+        ans+="A";
+        ans+=Integer.toString(bulls);
+        ans+="B";
+        return ans;
+    }
+}
