@@ -1,0 +1,30 @@
+public class Solution {
+    public int solve(int A, int B, int C) {
+        ArrayList<Integer> arr = new ArrayList<Integer>();
+        for(int i=A;i<=B;i++)
+        {
+         int num=i;
+         int rev=0;
+         while(num>0)
+         {
+          rev=rev*10+num%10;
+          num/=10;
+         }
+         if(rev==i)
+          arr.add(i);
+        }
+        int max=0,len=0,j=0;
+        for(int i=0;i<arr.size();i++)
+        {
+         len++;
+         while(j<i&&arr.get(i)-arr.get(j)>C)
+         {
+          len--;
+          j++;
+         }
+         if(max<len) max=len;
+        }
+        if(max<len) max=len;
+        return max;
+    }
+}
