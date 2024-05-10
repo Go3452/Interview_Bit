@@ -1,0 +1,19 @@
+public class Solution {
+    public int solve(int A) {
+        int count=0;
+        for(int i=1;i<=A;i++)
+        {
+         for(int j=i;j<=A;j++)
+         {
+          int sum=i*i+j*j;
+          int x=(int)Math.sqrt(sum);
+          if(sum==x*x)
+          {
+           if((int)Math.sqrt(sum)<=A)
+            count++;
+          }
+         }
+        }
+        return count;
+    }
+}
