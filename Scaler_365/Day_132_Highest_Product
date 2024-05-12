@@ -1,0 +1,32 @@
+public class Solution {
+    public int maxp3(int[] A) {
+        int max=Integer.MIN_VALUE,secmax=Integer.MIN_VALUE,thirdmax=Integer.MIN_VALUE;
+        int min=Integer.MAX_VALUE,secmin=Integer.MAX_VALUE;
+        for(int i=0;i<A.length;i++)
+        {
+         if(A[i]>max)
+         {
+          thirdmax=secmax;
+          secmax=max;
+          max=A[i];
+         }
+         else if(A[i]>secmax)
+         {
+          thirdmax=secmax;
+          secmax=A[i];
+         }
+         else if(A[i]>thirdmax)
+          thirdmax=A[i];
+         if(A[i]<min)
+         {
+          secmin=min;
+          min=A[i];
+         }
+         else if(secmin>A[i])
+          secmin=A[i];
+       }
+       if(min*secmin*max>max*secmax*thirdmax)
+        return min*secmin*max;
+       return max*secmax*thirdmax;
+    }
+}
