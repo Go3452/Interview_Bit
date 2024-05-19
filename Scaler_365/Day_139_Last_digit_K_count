@@ -1,0 +1,9 @@
+public class Solution {
+    public int solve(int A, int B, int C) {
+    int count=0;
+    int total=B%10<C?B/10:B/10+1;
+    int minus=(A-1)%10<C?(A-1)/10:(A-1)/10+1;
+    count=total-minus;
+    return count;
+    }
+}
