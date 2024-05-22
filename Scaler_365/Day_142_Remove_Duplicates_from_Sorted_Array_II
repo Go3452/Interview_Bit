@@ -1,0 +1,22 @@
+public class Solution {
+	public int removeDuplicates(ArrayList<Integer> a) {
+        int n=a.size(),count=1;
+        int i=1;
+        for(int j=1;j<n;j++)
+        {
+          if(a.get(j).intValue()==a.get(j-1).intValue()&&count<2)
+          {
+           a.set(i,a.get(j));
+           i++;
+           count++;   
+          }
+          else if(a.get(j).intValue()!=a.get(j-1).intValue())
+          {
+           a.set(i,a.get(j));
+           count=1;
+           i++;
+          } 
+        }
+        return i;
+    }
+}
